@@ -3,24 +3,33 @@
 {% block content %}
 <form action="submit" method="post">
     {% csrf_token %}
+    <div class="box" style="margin: 10px">
+        <div class="is-flex is-justify-content-center">
 
-    <label>Título:</label>
-    <input type="number" name="id_evento" value="{{ evento.id }}" hidden>
-    <br>
-    <input type="text" name="titulo" size="23" value="{{ evento.titulo }}">
-    <br>
-    <label>Data do Evento:</label>
-    <br>
-    <input type="datetime-local" name="data_evento" value="{{ evento.get_data_input_evento }}">
-    <br>
-    <label>Descrição:</label>
-    <br>
+                <div class="field">
+                    <p class="control has-icons-left m-2">
+                        <input type="number" name="id_evento" value="{{ evento.id }}" hidden>
+                        <label>Título:</label>
+                        <input class="input is-link" type="text" name="titulo" size="23" value="{{ evento.titulo }}">
+                    </p>
+                </div>
 
-    <textarea name="descricao" rows="5" cols="24">{{ evento.descricao }}</textarea>
-    <br><br>
-    <button type="submit">Salvar</button>
-    <a href="/">
-        <button type="button">Cancelar</button>
-    </a>
+                <div class="field">
+                    <p class="control has-icons-left m-2">
+                        <label>Data do Evento:</label>
+                        <input class="input is-link" type="datetime-local" name="data_evento" value="{{ evento.get_data_input_evento }}">
+                    </p>
+                </div>
+            </div>
+                <div class="field">
+                    <div class="column is-narrow">
+                        <label>Descrição:</label>
+                        <textarea class="textarea" name="descricao" rows="5" cols="24">{{ evento.descricao }}</textarea>
+                    </div>
+                </div>
+
+                    <button class="button is-primary" type="submit">Salvar</button>
+                    <a href="/" class="button is-info">Cancelar</a>
+        </div>
 </form>
 {% endblock %}

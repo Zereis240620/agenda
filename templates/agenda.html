@@ -3,18 +3,44 @@
 
     {% block content %}
         <h2>Agendamentos</h2>
-        <a href="evento/">
-            <button type="button">Novo Evento</button>
-        </a>
-        <ul style="font-size: 18px">
-            {% for evento in eventos %}
-                <li>
-                    <div style="{% if evento.get_evento_atrasado %} color:red {% endif %}">
-                        {{evento.titulo}} - {{evento.get_data_event}}
-                        <a href="evento/?id={{evento.id}}">Editar</a>
-                        <a href="evento/delete/{{ evento.id }}/">Excluir</a>
-                    </div>
-                </li>
-            {% endfor %}
-        </ul>
+
+    <div class="box">
+        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+              <thead>
+                <tr>
+                    <th>Excluir</th>
+                    <th>Editar</th>
+                    <th>Titulo</th>
+                    <th>Data do Evento</th>
+                </tr>
+              </thead>
+              <tbody>
+              {% for evento in eventos %}
+              <tr>
+                    <th><a href="evento/?id={{evento.id}}">
+                        <span class="icon">
+                          <i class="fas fa-home"></i>
+                        </span>
+                    </a></th>
+                    <th><abbr><a href="evento/delete/{{ evento.id }}/">Excluir</a></abbr></th>
+                    <th><span>{{evento.titulo}}</span></th>
+                    <th><span>{{evento.get_data_event}}</span></th>
+
+                </tr>
+              {% endfor %}
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th colspan="4">
+                      <div class="buttons">
+                        <a href="evento/">
+                            <button class="button is-primary is-light" type="button">Novo Evento</button>
+                        </a>
+                      </div>
+                  </th>
+                </tr>
+              </tfoot>
+        </table>
+
+    </div>
     {% endblock %}
