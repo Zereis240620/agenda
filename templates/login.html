@@ -2,51 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
     <title>Agenda</title>
 </head>
 <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-          <h1 style="font-weight: bold; font-size: 1.5em;">AGENDA DJANGO</h1>
-
+    <header>
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand p-2">
+          <h1 class="title has-text-centered has-text-white">AGENDA DJANGO</h1>
       </div>
     </nav>
-    <form action="submit" method="post">
-        {% csrf_token %}
-        <div class="box">
-            <div class="field">
-              <p class="control has-icons-left has-icons-right">
-                <input class="input is-rounded" type="text" name="username" placeholder="username">
-              </p>
-            </div>
-            <div class="field">
-              <p class="control has-icons-left">
-                <input class="input is-rounded" type="password" name="password" placeholder="password">
-              </p>
-            </div>
-              <div class="columns is-mobile is-centered">
-                <div class="column is-half">
-                    <button class="button" type="submit">Entrar</button>
-                </div>
-              </div>
-        </div>
-    </form>
+    </header>
 
-    {% for message in messages %}
-        <div align="center">
-            <article class="message is-danger">
-                <div class="message-header">
-                    <p>Erro!</p>
+    <main>
+            <form action="submit" method="post">
+                {% csrf_token %}
+                <div class="box m-5">
+                    <div class="field">
+                      <p class="control has-icons-left has-icons-right">
+                        <input class="input is-rounded" type="text" name="username" placeholder="username">
+                            <span class="icon is-small is-left">
+                                    <i class="fas fa-envelope"></i>
+                            </span>
+                      </p>
+                    </div>
+                    <div class="field">
+                      <p class="control has-icons-left">
+                        <input class="input is-rounded" type="password" name="password" placeholder="password">
+                        <span class="icon is-small is-left">
+                          <i class="fas fa-lock"></i>
+                        </span>
+                      </p>
+                    </div>
+                      <div class="columns is-mobile is-centered">
+                        <div class="m-2">
+                            <button class="button is-success" type="submit">Entrar</button>
+                        </div>
+                      </div>
                 </div>
-                <div class="message-body">
-                    {{message}}
+            </form>
+
+            {% for message in messages %}
+                <div class="is-centered m-3">
+                    <article class="message is-danger">
+                        <div class="message-header">
+                            <p>Erro!</p>
+                        </div>
+                        <div class="message-body">
+                            {{message}}
+                        </div>
+                    </article>
                 </div>
-            </article>
-        </div>
 
-    {% endfor %}
+            {% endfor %}
+    </main>
 
+    <footer>
+        <p></p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/js/all.min.js"></script>
 </body>
 </html>

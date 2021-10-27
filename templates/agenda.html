@@ -2,14 +2,14 @@
     {% extends "model-page.html" %}
 
     {% block content %}
-        <h2>Agendamentos</h2>
 
-    <div class="box">
+
+    <div class="box m-4">
         <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
               <thead>
                 <tr>
-                    <th>Excluir</th>
-                    <th>Editar</th>
+                    <th class="center-text">Excluir</th>
+                    <th class="center-text">Editar</th>
                     <th>Titulo</th>
                     <th>Data do Evento</th>
                 </tr>
@@ -17,12 +17,9 @@
               <tbody>
               {% for evento in eventos %}
               <tr>
-                    <th><a href="evento/?id={{evento.id}}">
-                        <span class="icon">
-                          <i class="fas fa-home"></i>
-                        </span>
-                    </a></th>
-                    <th><abbr><a href="evento/delete/{{ evento.id }}/">Excluir</a></abbr></th>
+                  <th class="center-text"><a href="evento/delete/{{ evento.id }}/"><i class="fas fa-trash-alt has-text-black"></i></a></th>
+                  <th class="center-text"><a href="evento/?id={{evento.id}}"><i class="fas fa-edit has-text-black"></i></a></th>
+
                     <th><span>{{evento.titulo}}</span></th>
                     <th><span>{{evento.get_data_event}}</span></th>
 

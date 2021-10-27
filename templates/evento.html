@@ -27,9 +27,18 @@
                         <textarea class="textarea" name="descricao" rows="5" cols="24">{{ evento.descricao }}</textarea>
                     </div>
                 </div>
+                <div class="field">
+                    <p class="control has-icons-left m-2">
+                        <label>Local:</label>
+                        <input class="input is-link" type="text" name="local"
+                               value="{% if evento.local != None %} {{evento.local}} {% endif %}">
+                    </p>
+                </div>
 
-                    <button class="button is-primary" type="submit">Salvar</button>
-                    <a href="/" class="button is-info">Cancelar</a>
+                <div class="columns is-mobile is-centered m-2">
+                    <button class="button is-primary m-2" type="submit">Salvar</button>
+                    <a href="/" class="button is-info m-2">Cancelar</a>
+                </div>
         </div>
 </form>
 {% endblock %}

@@ -3,10 +3,20 @@
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma-rtl.min.css">
-    {% include "model-header.html" %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta charset="UTF-8">
+    <title>Agenda</title>
 </head>
-<body>
-    {% block content %} {% endblock %}
+<body id="background-login">
+    {% include "model-header.html" %}
+
+    <main>
+        {% block content %} {% endblock %}
+    </main>
     {% include "model-footer.html" %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/js/all.min.js"></script>
 </body>
 </html>

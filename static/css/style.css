@@ -1,0 +1,13 @@
+html, body{
+   background-image: url('/static/img/fundo.jpg');
+   background-size: cover;
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+}
+.center-text{
+    text-align: center !important;
+}
+body > footer {
+    margin-top: auto;
+}
