@@ -11,22 +11,22 @@
 ## Comandos Importantes Django
 
 - Comando Criar Projeto Django
-	> django-admin startproject (projectname)
+		```django-admin startproject projectname```
 
 - Comando Criar Novo App
-	> django-admin startapp (appName)
+		``` django-admin startapp (appName) ```
 
 - Comando Criar Tabelas Django-Admin
-	> python manage.py migrate
+		 ``` python manage.py migrate ```
 
 - Comando Criar Usuário Django-Admin
-	> python manage.py createsuperuser --username admin
+		```python manage.py createsuperuser --username admin```
 
 - Comando Criar Migrations
-	> python manage.py makemigrations <appName>
+		```python manage.py makemigrations (appName)```
 
  - Comando Gerar Migrations Sql
-	> python manage.py sqlmigrate (appName) (Migration File)
+		```python manage.py sqlmigrate (appName) (Migration File)```
 
 - Comando Executar Migrations
-	> python manage.py migrate (appName) (Migration File)
+		```python manage.py migrate (appName) (Migration File)```
