@@ -7,3 +7,26 @@
 <a href="https://www.djangoproject.com/"><img width="100px" height="100px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-original.svg"/></a>
 <a href="https://bulma.io/"><img width="100px" height="100px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bulma/bulma-plain.svg" /></a>
 </p>
+
+## Comandos Importantes Django
+
+- Comando Criar Projeto Django
+	> django-admin startproject (projectname)
+
+- Comando Criar Novo App
+	> django-admin startapp (appName)
+
+- Comando Criar Tabelas Django-Admin
+	> python manage.py migrate
+
+- Comando Criar Usuário Django-Admin
+	> python manage.py createsuperuser --username admin
+
+- Comando Criar Migrations
+	> python manage.py makemigrations <appName>
+
+ - Comando Gerar Migrations Sql
+	> python manage.py sqlmigrate (appName) (Migration File)
+
+- Comando Executar Migrations
+	> python manage.py migrate (appName) (Migration File)
