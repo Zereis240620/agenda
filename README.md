@@ -1,5 +1,5 @@
 ## Projeto Agenda Django
--  Projeto Agenda de Eventos, feito no Curso de DJANGO da <a href="https://digitalinnovation.one/sign-in">Digital Innovation One</a>
+-  Projeto Agenda de Eventos, feito no Curso de DJANGO da <a href="https://digitalinnovation.one/sign-in" target="_blank">Digital Innovation One</a>
 ## Tecnologias Usadas
 - Python, Django e Bulma
 <p float="left">
